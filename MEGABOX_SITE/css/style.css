@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+/* A. 헤더 */
+/* 레이아웃 */
+#header {
+    width: 100%;
+    height: 63px;
+    border-bottom: 1px solid #c6c6c6;
+    /* background: rgba(0,0,0,0.1);  */
+}
+/* 가운데 영역 */
+.container {
+    position: relative;
+    width: 1280px;
+    margin: 0 auto;
+    /* background: rgba(0,0,0,0.2);  */
+}
+/* 로우 영역 */
+.row {
+    padding: 0 24px;
+}
+/* 헤더 영역 */
+.header h1 {
+    float: left;
+}
+.header h1 em {
+    padding: 15px 8px 3px 0;
+    display: inline-block;
+}
+.header h1 em img {
+    width: 155px;
+}
+.header h1 strong {
+    display: block;
+    position: absolute;
+    left: 194px;
+    top: 22px;
+}
+.header h1 strong img {
+    width: 126px;
+}
+.header .nav {
+    float: right;
+}
+.header .nav ul {
+    border-left: 1px solid #c6c6c6;
+}
+.header .nav ul li {
+    float: left;
+    width: 103px;
+    text-align: center;
+    border-right: 1px solid #c6c6c6;
+}
+.header .nav ul li a {
+    display: block;
+    padding: 19px 10px;
+    font-size: 17px;
+    font-weight: 700;
+    color: 444;
+}
+
+/* B. 배너 */
+#banner {
+    position: relative;
+}
+.banner_menu {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 100%;
+    height: 100px;
+}
+.banner_menu a {
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+.banner_menu a:hover {
+    color: #c1c1c1;
+}
+.banner_menu .bm_left {
+    float: left;
+}
+.banner_menu .bm_left ul {
+    padding-top: 8px;
+}
+.banner_menu .bm_left ul li {
+    position: relative; /* line 나타나게*/
+    display: inline;
+    margin-right: 30px;
+}
+.banner_menu .bm_left li.total {
+    margin-right: 20px;
+}
+.banner_menu .bm_left li.total a {
+    font-size: 14px;
+    padding: 3px 10px;
+    display: inline-block;
+    border: 1px solid #fff;
+    transition: all 0.3s;
+}
+.banner_menu .bm_left li.total a:hover {
+    background: #fff;
+    border-color: #000;
+    color: #000;
+}
+.banner_menu .bm_right {
+    float: right;
+    overflow: hidden;
+}
+.banner_menu .bm_right ul {
+    float: left;
+}
+.banner_menu .bm_right ul:first-child {
+    padding-top: 8px;
+}
+.banner_menu .bm_right ul li {
+    position: relative; /* line 나타나게*/
+    display: inline;
+    text-align: center;
+    margin-right: 20px;
+}
+.banner_menu .bm_right li.line {
+    margin-right: 30px;
+}
+.banner_menu li.line:after {
+    content: '';
+    width: 1px;
+    height: 14px;
+    background: #fff;
+    position: absolute;
+    right: -18px;
+    top: 2px;
+}
+.banner_menu .bm_right li.white {
+    margin-right: 10px;
+}
+.banner_menu .bm_right li.white a {
+    width: 80px;
+    background-color: #fff;
+    color: #3a0e6a;
+    display: inline-block;
+    padding: 7px 30px 9px 30px;
+    border: 1px solid #fff;
+}
+.banner_menu .bm_right li.purple {
+    margin-right: 0;
+}
+.banner_menu .bm_right li.purple a {
+    width: 80px;
+    background-color: #3a0e6a;
+    color: #fff;
+    display: inline-block;
+    padding: 7px 30px 9px 30px;
+    border: 1px solid #6e40c4;
+}
+
+/* 
+    <block>
+    - 블록구조는 한 영역을 차지한다. 즉 오른쪽에 누가 오는 걸 싫어한다. 인라인 구조와 성격이 반대다.
+    - 오른쪽으로 정렬시키려면 float의 도움이 필요하다.
+    - height 값을 인식할 수 있도록 해주어야 한다.
+        1. 똑같이 float을 사용한다.
+        2.clear:both;를 사용한다.
+        3. 상위박스한테 overflow:hidden을 사용한다.
+        4. clearfix를 만들어 사용한다.
+        (가상으로 영역을 만들어 하이트 값을 인식하도록 만드는 clearfix가 현재로썬 최선책)
+
+        <clearfix>
+        - 영역 깨짐을 방지하기 위한 방법
+    */

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- 
+        구 익스플로러가 최신 렌더링을 사용하기 위함
+        현재는 구 익스플로러를 많이 사용하지 않기 때문에 죽은 소스
+    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 
+        <meta name="viewport" content="속성">
+        -> pc화면의 비율을 줄여 모바일 화면에서 보일 수 있도록 하는 기술
+        content="user-scalable=no (화면 확대 금지)
+                initial-scale=1.0 (초기 배율 설정)
+                maximum-scale=1.0 (최대 배율 설정)
+                minimum-scale=1.0 (최소 배율 설정)
+                width=device-width" (디바이스 가로값 설정)
+    -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale-1.0, width=device-width">
+    <meta name="keywords" content="메가박스, 유투브, 영화, 최신영화, 영화관, CGV, 롯데시네마">
+    <title>MEGABOX</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- 파비콘 -->
+    <!-- 
+        <link rel="shortcut icon" href="favicon.ico"/>
+        -> 사이즈는 16*16, 32*32, 48*48, 64*64, 파일은 .ico, .png, .jpg, .gif를 지원
+
+        +모바일용 아이콘
+        <link rel="apple-touch-icon-precomposed" href="assets/icon/favicon.png"/>
+    -->
+    <link rel="shortcut icon" href="icon/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="icon/favicon_72.png">
+    <link rel="apple-touch-icon-precomposed" href="icon/favicon_96.png">
+    <link rel="apple-touch-icon-precomposed" href="icon/favicon_144.png">
+    <link rel="apple-touch-icon-precomposed" href="icon/favicon_192.png">
+
+    <!-- 자바스크립트 라이브러리 -->
+    <!-- 
+        제이쿼리는 자바스크립트를 이용해서 만든 언어
+        자주 사용하는 코드를 누구나 사용하기 쉽도록 쉽게 만들어 놓은 스크립트 언어
+    -->
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="js/modernizr-custom.js"></script> <!-- 브라우저 기능검사 도구 -->
+    <script src="js/ie-checker.js"></script>
+
+    <!-- 웹폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- A. 헤더 -->
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <div class="header clearfix">
+                    <h1>
+                        <a href="#">
+                        <em><img src="img/logo.png" alt="MEGABOX"></em>
+                        <strong><img src="img/logo-sub.png" alt="LIFE"></strong>
+                    </a></h1>
+                    <nav class="nav">
+                        <ul class="clearfix">
+                            <li><a href="#">영화</a></li>
+                            <li><a href="#">큐레이션</a></li>
+                            <li><a href="#">영화관</a></li>
+                            <li><a href="#">특별관</a></li>
+                            <li><a href="#">스토어</a></li>
+                            <li><a href="#">이벤트</a></li>
+                            <li><a href="#">로그인</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- // 헤더 -->
+
+    <!-- B. 배너 -->
+    <section id="banner">
+        <h2 class="ir_so">최신 영화 소식</h2> <!-- 접근성을 위해 제작하는 부분 -->
+        <div class="banner_menu">
+            <div class="container">
+                <div class="row">
+                    <div class="bm_left">
+                        <ul>
+                            <li class="total"><a href="#">전체메뉴</a></li>
+                            <li class="line"><a href="#">필름 소사이어티</a></li>
+                            <li><a href="#">클래식 소사이어티</a></li>
+                        </ul>
+                    </div>
+                    <div class="bm_right">
+                        <ul>
+                            <li class="line"><a href="#">고객센터</a></li>
+                            <li class="line"><a href="#">멤버쉽</a></li>
+                            <li><a href="#">VIP</a></li>
+                        </ul>
+                        <ul>
+                            <li class="white"><a href="#">상영시간표</a></li>
+                            <li class="purple"><a href="#">빠른 예매</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider">
+            <img src="img/main_slider01.jpg" alt="베스와 배라">
+        </div>
+    </section>
+    <!-- // 배너 -->
+</body>
+</html>
