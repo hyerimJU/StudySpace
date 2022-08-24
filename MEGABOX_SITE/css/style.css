@@ -1,23 +1,63 @@
 @charset "utf-8";
 
-/* A. 헤더 */
 /* 레이아웃 */
+#mNav {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 14px;
+}
 #header {
     width: 100%;
-    height: 63px;
     border-bottom: 1px solid #c6c6c6;
-    /* background: rgba(0,0,0,0.1);  */
 }
+#banner {
+    position: relative;
+}
+
+/* A. 헤더 */
 /* 가운데 영역 */
 .container {
     position: relative;
     width: 1280px;
     margin: 0 auto;
-    /* background: rgba(0,0,0,0.2);  */
 }
 /* 로우 영역 */
 .row {
-    padding: 0 24px;
+    padding: 0 28px;
+}
+/* 모바일 햄버거 메뉴 */
+.ham {
+    display: block;
+    width: 25px;
+    height: 10px;
+    /* background: rgb(234, 228, 228); */
+    padding: 15px 10px 10px 10px;
+}
+.ham span {
+    position: relative;
+    display: block;
+    width: 25px;
+    height: 4px;
+    background: #3a0e6a;
+}
+.ham span::before {
+    content: '';
+    width: 25px;
+    height: 4px;
+    background: #3a0e6a;
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+}
+.ham span::after {
+    content: '';
+    width: 25px;
+    height: 4px;
+    background: #3a0e6a;
+    position: absolute;
+    left: 0;
+    top: -7px;
 }
 /* 헤더 영역 */
 .header h1 {
@@ -60,9 +100,6 @@
 }
 
 /* B. 배너 */
-#banner {
-    position: relative;
-}
 .banner_menu {
     overflow: hidden;
     position: absolute;
@@ -70,6 +107,7 @@
     top: 20px;
     width: 100%;
     height: 100px;
+    z-index: 10;
 }
 .banner_menu a {
     color: #fff;
@@ -79,6 +117,7 @@
 .banner_menu a:hover {
     color: #c1c1c1;
 }
+/* 메뉴 왼쪽 영역 */
 .banner_menu .bm_left {
     float: left;
 }
@@ -105,6 +144,7 @@
     border-color: #000;
     color: #000;
 }
+/* 메뉴 오른쪽 영역 */
 .banner_menu .bm_right {
     float: right;
     overflow: hidden;
@@ -156,6 +196,184 @@
     border: 1px solid #6e40c4;
 }
 
+/* 슬라이드 */
+.slider {
+    width: 100%;
+    height: 600px;
+}
+.slider .ss1 {
+    background: url(/img/swiper01.jpg) no-repeat center center;
+    background-size: cover;
+}
+.slider .ss2 {
+    background: url(/img/main_slider02_2000.jpg) no-repeat center center;
+    background-size: cover;
+}
+.slider .ss3 {
+    background: url(/img/main_slider03_2000.jpg) no-repeat center center;
+    background-size: cover;
+}
+.slider .swiper-slide {
+    color: #fff;
+}
+.slider .swiper-slide h2 {
+    position: relative;
+    margin-top: 220px;
+    line-height: 45px;
+    font-size: 47px;
+}
+.slider .swiper-slide h2:after {
+    content: '';
+    width: 445px;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    top: 100px;
+    opacity: .5;
+}
+.slider .swiper-slide em {
+    display: block;
+    font-size: 26px;
+    font-weight: 100;
+}
+.slider .swiper-slide p {
+    padding-top: 20px;
+    font-size: 29px;
+    font-weight: 300;
+}
+
+
+/*** 미디어쿼리 ***/
+@media (max-width: 1290px){
+    .container {
+        width: 100%;
+    }
+    .header .nav ul li {
+        width: 93px;
+    }
+    .header .nav ul li a {
+        font-size: 15px;
+        padding: 17px 10px;
+    }
+    .header h1 em {
+        padding: 11px 8px 5px 0;
+    }
+    .header h1 strong {
+        top: 19px;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none;
+    }
+}
+@media (max-width: 1024px){
+    #mNav {
+        display: block;
+    }
+    .nav {
+        display: none;
+    }
+    .row {
+        padding: 0 24px;
+    }
+    .header h1 {
+        float: none;
+        text-align: center;
+    }
+    .header h1 strong {
+        left: 24px;
+    }
+    .banner_menu .bm_left {
+        display: none;
+    }
+    .banner_menu .bm_right ul:first-child {
+        display: none;
+    }
+}
+@media (max-width: 960px){
+    .slider {
+        height: 500px;
+    }
+    .slider .swiper-slide h2 {
+        margin-top: 190px;
+        line-height: 35px;
+        font-size: 38px;
+    }
+    .slider .swiper-slide h2:after {
+        width: 360px;
+        top: 78px;
+    } 
+    .slider .swiper-slide em {
+        font-size: 21px;
+    }
+    .slider .swiper-slide p {
+        padding-top: 12px;
+        font-size: 22px;
+    }
+    .swiper-pagination-bullet {
+        width: 15px !important;
+        height: 15px !important;
+    }
+}
+@media (max-width: 768px){
+    .row {
+        padding: 0 16px;
+    }
+    #mNav {
+        right: 6px;
+    }
+    .header h1 strong {
+        display: none;
+    }
+    .header h1 {
+        text-align: left;
+    }
+}
+@media (max-width: 600px){
+    .slider {
+        height: 400px;
+    }
+    .slider .swiper-slide h2 {
+        margin-top: 165px;
+        line-height: 22px;
+        font-size: 24px;
+    }
+    .slider .swiper-slide h2:after {
+        width: 240px;
+        top: 50px;
+    } 
+    .slider .swiper-slide em {
+        font-size: 13px;
+    }
+    .slider .swiper-slide p {
+        padding-top: 11px;
+        font-size: 14px;
+    }
+    .banner_menu .bm_right li.white a {
+        background-color: rgba(0,0,0,.5);
+        color: #fff;
+        border: 1px solid rgba(255,255,255,.5);
+        padding: 3px 5px 5px 5px;
+        font-size: 14px;
+    }
+    .banner_menu .bm_right li.purple a {
+        background-color: rgba(0,0,0,.5);
+        padding: 3px 5px 5px 5px;
+        border: 1px solid rgba(255,255,255,.5);
+        font-size: 14px;
+    }
+    .swiper-pagination-bullet {
+        width: 13px !important;
+        height: 13px !important;
+    }
+}
+@media (max-width: 480px){
+    
+}
+@media (max-width: 320px){
+    
+}
+
 /* 
     <block>
     - 블록구조는 한 영역을 차지한다. 즉 오른쪽에 누가 오는 걸 싫어한다. 인라인 구조와 성격이 반대다.
@@ -169,4 +387,15 @@
 
         <clearfix>
         - 영역 깨짐을 방지하기 위한 방법
-    */
+    
+    <viewport, media query>
+    - 뷰포트는 pc화면 비율을 모바일 비율로 바꿔주고, 미디어 쿼리는 화면 크기에 따라 css를 제작한다.
+        1. 외부 링크에서 사용
+            <link rel="stylesheet" href="style.css"/>
+        2. 화면 크기별로 css 작성
+            <link rel="stylesheet" media="all and(min-width:380px)" href="style.css"/>
+        3. 임포트 시키는 방법
+            @import url(style.css)all and(min-width:380px);
+
+
+*/

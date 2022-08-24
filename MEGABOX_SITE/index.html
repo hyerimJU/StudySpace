@@ -23,6 +23,8 @@
     <!-- css -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
     
     <!-- 파비콘 -->
     <!-- 
@@ -38,15 +40,6 @@
     <link rel="apple-touch-icon-precomposed" href="icon/favicon_144.png">
     <link rel="apple-touch-icon-precomposed" href="icon/favicon_192.png">
 
-    <!-- 자바스크립트 라이브러리 -->
-    <!-- 
-        제이쿼리는 자바스크립트를 이용해서 만든 언어
-        자주 사용하는 코드를 누구나 사용하기 쉽도록 쉽게 만들어 놓은 스크립트 언어
-    -->
-    <script src="js/jquery.min_1.12.4.js"></script>
-    <script src="js/modernizr-custom.js"></script> <!-- 브라우저 기능검사 도구 -->
-    <script src="js/ie-checker.js"></script>
-
     <!-- 웹폰트 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
@@ -55,13 +48,17 @@
     <!-- A. 헤더 -->
     <header id="header">
         <div class="container">
-            <div class="row">
+            <div class="row"> <!-- 양쪽 간격 유지에 유용 -->
                 <div class="header clearfix">
                     <h1>
                         <a href="#">
                         <em><img src="img/logo.png" alt="MEGABOX"></em>
                         <strong><img src="img/logo-sub.png" alt="LIFE"></strong>
                     </a></h1>
+                    <nav id="mNav"> <!-- 모바일용 햄버거 아이콘-->
+                        <h2 class="ir_so">메가박스 전체메뉴</h2>
+                        <a href="#" class="ham"><span></span></a>
+                    </nav>
                     <nav class="nav">
                         <ul class="clearfix">
                             <li><a href="#">영화</a></li>
@@ -87,7 +84,9 @@
                 <div class="row">
                     <div class="bm_left">
                         <ul>
-                            <li class="total"><a href="#">전체메뉴</a></li>
+                            <li class="total"><a href="#">
+                                <i class="fa fa-bars" aria-hidden="true"></i>
+                                전체메뉴</a></li>
                             <li class="line"><a href="#">필름 소사이어티</a></li>
                             <li><a href="#">클래식 소사이어티</a></li>
                         </ul>
@@ -107,9 +106,136 @@
             </div>
         </div>
         <div class="slider">
-            <img src="img/main_slider01.jpg" alt="베스와 배라">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide ss1">
+                        <div class="container">
+                            <div class="row">
+                                <h2>캡틴 마블 <em>Captain Marvel</em></h2>
+                                <p>새로운 히어로, 어벤져스의 희망</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide ss2">
+                        <div class="container">
+                            <div class="row">
+                                <h2>어벤져스: 앤드게임 <em>Avengers: Endgame</em></h2>
+                                <p>역대 최단 기간 1000만 관객 돌파 기록 </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide ss3">
+                        <div class="container">
+                            <div class="row">
+                                <h2>왕자의 게임 <em>Game of Thrones</em></h2>
+                                <p>심장 쫄깃한 판타지의 서막</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
         </div>
     </section>
     <!-- // 배너 -->
+
+    <!-- C. 콘텐츠 -->
+    <!-- C-1. 영화 차트 -->
+        <section id="movie">
+            <div class="container">
+                <div class="row">
+                    <div class="movie">
+                        <h2 class="ir_so">최신 영화 정보</h2>
+                        <div class="movie_title">
+                            <ul>
+                                <li class="active"><a href="#">박스오피스</a></li>
+                                <li><a href="#">최신개봉작</a></li>
+                                <li><a href="#">상영예정작</a></li>
+                                <li><a href="#">큐레이션</a></li>
+                            </ul>
+                        </div>
+                        <div class="movie_chart">
+                            <!-- 박스오피스 -->
+                            <div class="chart_cont1">
+                                <div>
+                                    <div class="poster">
+                                        <figure>
+                                            <img src="img/poster01@2.jpg" alt="침묵포스터">
+                                        </figure>
+                                    </div>
+                                    <div class="rank"><strong>1</strong></div>
+                                    <div class="mx">
+                                        <span>MX</span>
+                                        <span>Boutique</span>
+                                    </div>
+                                    <div class="infor">
+                                        <h3>
+                                            <span>15</span>
+                                            <strong>침묵</strong>
+                                        </h3>
+                                        <div class="infor_btn">
+                                            <a href="#">상세보기</a>
+                                            <a href="#">예매하기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 최신개봉작 -->
+                            <div class="chart_cont2"></div>
+                            <!-- 상영예정작 -->
+                            <div class="chart_cont3"></div>
+                            <!-- 큐레이션 -->
+                            <div class="chart_cont4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- C-2. 새로운 이벤트 -->
+
+    <!-- C-3. 오프닝 -->
+
+    <!-- C-4. 새로운 영화 -->
+
+    <!-- C-5. 공지사항, 할인카드, 고객센터 -->
+
+
+    <!-- D. 푸터 -->
+
+
+    <!-- 자바스크립트 라이브러리 -->
+    <!-- 
+        제이쿼리는 자바스크립트를 이용해서 만든 언어
+        자주 사용하는 코드를 누구나 사용하기 쉽도록 쉽게 만들어 놓은 스크립트 언어
+    -->
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="js/modernizr-custom.js"></script> <!-- 브라우저 기능검사 도구 -->
+    <script src="js/ie-checker.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script>
+        //배너 이미지 슬라이드
+        var swiper = new Swiper('.swiper-container',{
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 5000,
+            },
+        });
+    </script>
 </body>
 </html>
+
+<!-- 
+    <이미지를 표현하는 태그>
+        <img> 이미지를 불러올 때 사용
+        <figure> 이미지를 표현할 때 사용
+        <figcation> 이미지를 설명할 때 사용
+        <picture> 이미지를 화면 크기에 따라 사용
+-->
