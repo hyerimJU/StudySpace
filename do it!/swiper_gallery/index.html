@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- TITLE -->
+    <title>swiper_gallery</title>
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="favicon.ico/icon.png">
+    <!-- swiper CDN 1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FONTAWSOME -->
+    <script src="https://kit.fontawesome.com/cb10b496da.js" crossorigin="anonymous"></script>
+    <!-- swiper CDN 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!--
+        CDN(content delivery network)
+        : 콘텐츠 전송 연결망
+        : 병목 현상을 피하기위해 서버를 여러 개로 분산해서 파일을 전송하는 시스템
+        : CDN 코드만 입력하면 플러그인 파일을 내려받고 올리는 번거로움을 줄일 수 있음
+
+        * swiper로 시작하는 클래스 이름을 임의로 변경해서는 안됨
+    -->
+</head>
+<body>
+    <div class="wrap">
+        <h1>UI/UX <span>PORTFOLIO</span></h1>
+
+        <!-- 자동재생, 일지정지 버튼 -->
+        <ul class="auto">
+            <li class="btnStart"><i class="fa-solid fa-play"></i></li>
+            <li class="btnStop"><i class="fa-solid fa-pause"></i></li>
+        </ul>
+
+        <!-- swiper 플러그인 -->
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="inner">
+                    <div class="con">
+                        <img src="img/pic1.png" alt="pic1">
+                        <h2>Ipsum dolor sit amet.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="inner">
+                    <div class="con">
+                        <img src="img/pic2.png" alt="pic1">
+                        <h2>Lorem ipsum dolor.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="inner">
+                    <div class="con">
+                        <img src="img/pic3.png" alt="pic1">
+                        <h2>Dolor ipsum sit.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="inner">
+                    <div class="con">
+                        <img src="img/pic4.png" alt="pic1">
+                        <h2>Consectetur adicing.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="inner">
+                    <div class="con">
+                        <img src="img/pic5.png" alt="pic1">
+                        <h2>Dicta! elit.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 좌우 버튼 -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+        <!-- 현재 활성화된 페이지의 번호 -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- swiper 플러그인의 호출 구문 연결 -->
+    <script>
+        const swiper = new Swiper('.wrap', { // wrap: 프레임의 요소명
+            direction: 'horizontal', // 스와이프 방향
+            loop: true, // 순환 여부
+            pagination: {
+                el: '.swiper-pagination', // 페이지 메뉴 요소명
+                type: 'fraction' // 페이지 버튼 대신 슬라이더 번호 출력
+            },
+            navigation: {
+                nextEl: '.swiper-button-next', // 다음 버튼 요소명
+                prevEl: '.swiper-button-prev', // 이전 버튼 요소명
+            },
+            spaceBetween: 0, // 패널 사이의 간격을 50px만큼 띄움
+            slidesPerView: "auto", // CSS에 지정한 슬라이더의 크기를 반영
+            grabCursor: true, // 스와이프 시 마우스 포인터 모양 변경
+            centeredSlides: true, // 슬라이더 패널을 항상 가운데로 정렬
+            speed: 1000, // 슬라이더 이동 속도 지정
+
+            effect: "coverflow", // 이펙트 효과 지정
+            coverflowEffect: {
+                rotate: 50, // 회전 각도 지정
+                stretch: -100, // 슬라이드 간의 당김 정도 지정
+                depth: 400, // 원근감 지정
+                modifier: 1, // 중첩 정도 지정
+                slideShadows: false, // 슬라이드의 그림자 생성
+            },
+
+            autoplay: {
+                delay: 1000,
+                disableOnInteraction: true // 자동 재생하다가 좌우 버튼을 클릭하거나 스와이프를 하는 등의 특정 행동을 하면 자동 재생 기능 중지
+            }
+        });
+
+        const btnStart = document.querySelector(".btnStart");
+        const btnStop = document.querySelector(".btnStop");
+        // btnStart 버튼 클릭 시 자동 스와이프를 시작
+        btnStart.addEventListener("click", ()=>{
+            swiper.autoplay.start();
+        });
+        // btnStop 버튼 클릭 시 자동 스와이프를 정지
+        btnStop.addEventListener("click",()=>{
+            swiper.autoplay.stop();
+        });
+    </script>
+</body>
+</html>

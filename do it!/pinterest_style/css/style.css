@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+ul, ol, li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+body {
+    background: #efefef;
+}
+header {
+    width: 400px;
+    height: 100%;
+    background: linear-gradient(45deg, aqua, royalblue);
+    /* main 영역에서 콘텐츠를 스크롤해도 header 영역이 항상 왼쪽 상단에 고정되어야 함*/
+    position: fixed; /* 화면 왼쪽에 고정 */
+    top: 0px;
+    left: 0px;
+}
+main {
+    margin-left: 400px; /* 전체 너비에서 왼쪽 여백 400px를 뺀 나머지로 너빗값이 자동 계산됨*/
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+/* 헤더 */
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 50px;
+    color: #fff;
+    letter-spacing: 1px;
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-150%);
+}
+header h1::before {
+    content: 'UI/UX DEVELOPMENT';
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 2px;
+    position: absolute;
+    left: 0px;
+    top: 140px;
+    opacity: 0.8;
+}
+header h1::after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 2px;
+    background: #fff;
+    margin-top: 5px;
+}
+header ul {
+    position: absolute;
+    left: 40px;
+    bottom: 100px;
+}
+header ul li {
+    float: left;
+    margin-right: 10px;
+}
+header ul li a {
+    font-size: 20px;
+    color: #fff;
+}
+header ul li a span {
+    display: inline-block;
+    font-weight: bold;
+    opacity: 0.7;
+    /* font-size 속성으로 조정할 수도 있지만 그렇게 되면 왼쪽 아이콘과 세로 정렬이 틀어지므로
+    70% 축소하고 왼쪽으로 -10px만큼 이동해야 한다.
+    */
+    transform: scale(0.7) translateX(-10px);
+}
+
+/* main */
+main section {
+    width: 100%;
+}
+main section::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+main section article {
+    width: 20%;
+    float: left;
+    box-sizing: border-box;
+    padding: 12px;
+}
+main section article div {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    padding: 14px;
+}
+main section article div img {
+    width: 100%;
+}
+main section article div h2 {
+    margin-top: 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #444;
+    margin-bottom: 5px;
+}
+main section article div p {
+    font-size: 10px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* **************************************************** */
+/* responsive */
+/* 브라우저 폭이 1600px 미만일 때 */
+@media screen and (max-width:1599px){
+    header {
+        width: 350px;
+    }
+    main {
+        margin-left: 350px;
+    }
+    main section article {
+        width: 25%;
+    }
+}
+/* 1200px 미만일 때 */
+@media screen and (max-width: 1199px){
+    header {
+        width: 100%;
+        height: 80px;
+        position: relative;
+    }
+    header h1 {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 24px;
+        transform: translateY(-50%);
+    }
+    header h1::before, #header h1::after {
+        display: none;
+    }
+    header ul {
+        left: 83%;
+        bottom: 25px;
+    }
+    header ul li {
+        margin-right: 20px;
+    }
+    header ul li a {
+        font-size: 20px;
+    }
+    header ul li a span {
+        display: none;
+    }
+    main {
+        width: 100%;
+        margin-left: 0px;
+    }
+    main section article {
+        width: 25%;
+    }
+}
+/* 브라우저 폭이 900px 미만일 때 */
+@media screen and (max-width:899px) {
+    header ul {
+        left: 80%;
+    }
+    main section article {
+        width: 33.333%;
+    }
+}
+/* 브라우저 폭이 680px 미만일 때 */
+@media screen and (max-width:679px) {
+    header ul {
+        left: 70%;
+    }
+    main section article {
+        width: 50%;
+    }
+}
+/* 브라우저 폭이 540px 미만일 때 */
+@media screen and (max-width:539px) {
+    header ul {
+        display: none;
+    }
+    main ul {
+        margin-right: 0;
+        box-sizing: border-box;
+        padding: 0px 13px;
+    }
+    main ul li {
+        margin-right: 2%;
+        width: 32%;
+    }
+    main ul li:nth-of-type(1) {
+        margin-right: 0%;
+    }
+    main section article {
+        width: 100%;
+    }
+}
+
+/* 분류 기능 버튼 */
+main ul {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+main ul::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+main ul li {
+    float: right;
+    margin-right: 20px;
+    width: 100px;
+    height: 26px;
+}
+main ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-family: 'Orbitron', sans-serif;
+    font: 26px;
+    color: #aaa;
+    letter-spacing: 1px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.05);
+    background: #fff;
+    padding-top: 4px;
+}
+main ul li.on a {
+    background: linear-gradient(45deg, #67faf3, #58abf8);
+    box-shadow: 0px 5px 20px rgba(0,255,255,0.527);
+    color: #fff;
+}
