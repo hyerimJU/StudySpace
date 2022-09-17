@@ -1,0 +1,42 @@
+a {
+    text-decoration: none;
+}
+ol, ul, li {
+    text-decoration: none;
+}
+
+#box {
+    width: 200px;
+    height: 200px;
+    background-color: yellowgreen;
+    border: 5px solid #000;
+    transform: rotate(0deg);
+}
+
+a {
+    font-size: 100px;
+    color: #555;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    background: yellowgreen;
+}
+
+.rotate {
+    width: 200px;
+    height: 200px;
+    background: green;
+    transition: 0.5s;
+}
+.btnLeft {
+    font-size: 80px;
+    color: yellowgreen;
+    background-color: aliceblue;
+}
+.btnRight {
+    font-size: 80px;
+    color: green;
+    background-color: aliceblue;
+}
