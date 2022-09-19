@@ -1,0 +1,21 @@
+article {
+    width: 500px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    padding: 50px;
+    margin: 50px auto;
+}
+article svg {
+    width: 100%;
+}
+article svg path {
+    fill: transparent; /* 배경색 */
+    stroke: red; /* 선의 색 */
+    stroke-width: 2; /* 선의 굵기, 벡터 형식은 px 단위가 아닌 비율 단위를 사용 */
+    stroke-dasharray: 1420;
+    stroke-dashoffset: -1420;
+    transition: all 3s;
+}
+article:hover svg path {
+    stroke-dashoffset: 0;
+}

@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+#wrap {
+    display: flex;
+    flex-flow: row wrap;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* 헤더 영역 */
+.header {
+    display: flex;
+    order: 1;
+    /* h1의 position이 absolute로 설정되었기 때문에 제목 영역은 기존의 위치에서 벗어나게 되고, */
+    /* 메뉴 영역은 왼쪽으로 배치되면서 제목 영역이 메뉴 영역 위로 올라갔다. */
+    justify-content: flex-end;
+    position: relative;
+    width: 100%;
+}
+.header h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12.5%;
+    height: 142px;
+    background: #ff6b57;
+}
+.header nav {
+    position: absolute;
+    width: 87.5%;
+    min-height: 80px;
+    background: #ff6b57;
+
+    /* txt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 슬라이더 영역, 갤러리 영역, 인기 검색어 영역 */
+.slider_section {
+    order: 2;
+    width: 50%;
+    background: #3c90be;
+
+    /* txt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gallery_section {
+    order: 3;
+    width: 27.08333333333333333333333333333333%;
+    height: 440px;
+    background: #f8de73;
+
+    /* txt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rankup_section {
+    order: 4;
+    width: 22.91666666666666666666666666666667%;
+    background: #00d2a5;
+
+    /* txt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 최근 글, 인기 글 영역, 배너 영역, 소셜 네트워크 영역 */
+.latest_post_section {
+    order: 5;
+    width: 30%;
+    background: #9cabe4;
+
+    /* txt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popular_post_section {
+    order: 6;
+    width: 30%;
+    background: #d76817;
+
+    /* txt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner_section {
+    display: flex;
+    order: 7;
+    width: 22.9166666666666666666666666666667%;
+    flex-flow: column nowrap;
+}
+.banner_section div {
+    flex: 1 1 0;
+}
+.banner_section div.banner_box_01 {
+    background: #0175bb;
+
+    /* txt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner_section div.banner_box_02 {
+    background: #1261c9;
+
+    /* txt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.social_section {
+    order: 8;
+    width: 17.0833333333333333333333333333333%;
+    height: 270px;
+    background: #fe6eda;
+
+    /* txt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 푸터 영역 */
+.footer {
+    order: 9;
+    width: 100%;
+    height: 94px;
+    background: #474747;
+
+    /* txt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
