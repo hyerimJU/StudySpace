@@ -9,40 +9,132 @@
     <title>board</title>
     <!-- CSS -->
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/board.css">
     <!-- FAVICON -->
     <link rel="shortcut icon" href="img/favicon/favicon.png">
     <!-- JS -->
     <script defer src="js/jquery.min.js"></script>
-    <!-- STYLE -->
-    <style>
-        /* 모바일용 CSS */
-        /* 기본 CSS */
-        #wrap {
-            display: flex;
-            flex-flow: column nowrap;
-            width: 80%;
-            margin: 0 auto;
-            max-width: 1200px;
-        }
-        /* 태블릿용 CSS */
-        @media all and (min-width: 768px){
-            #wrap section {
-                box-sizing: border-box;
-            }
-        }
-        /* PC용 CSS */
-        @media all and (min-width: 960px){
-            #wrap {
-                position: relative;
-                width: 90%;
-            }
-        }
-    </style>
+    <script defer src="js/flat.min.js"></script>
 </head>
 <body>
     <div id="wrap">
-
-        
+        <!-- 인포메이션 영역 -->
+        <section class="info_section">
+            <ul class="info_list">
+                <li><a href="index.html"><img src="img/s_images/info_icon_01.png" alt="home"></a></li>
+                <li><a href=""><img src="img/s_images/info_icon_02.png" alt="login"></a></li>
+                <li><a href=""><img src="img/s_images/info_icon_03.png" alt="join"></a></li>
+                <li><a href=""><img src="img/s_images/info_icon_04.png" alt="search"></a></li>
+            </ul>
+        </section>
+        <!-- 헤더 영역 -->
+        <header class="header">
+            <h1 class="logo">
+                <a href="index.html">flat<br>design</a>
+            </h1>
+            <nav class="nav">
+                <ul class="gnb">
+                    <li><a href="index.html">홈</a><span class="sub_menu_toggle_btn">하위 메뉴 토글 버튼</span></li>
+                    <li><a href="introduce.html">플랫 디자인이란?</a><span class="sub_menu_toggle_btn">하위 메뉴 토글 버튼</span></li>
+                    <li><a href="gallery.html">갤러리</a><span class="sub_menu_toggle_btn">하위 메뉴 토글 버튼</span></li>
+                    <li><a href="board.html">문의사항</a><span class="sub_menu_toggle_btn">하위 메뉴 토글 버튼</span></li>
+                </ul>
+            </nav>
+            <span class="menu_toggle_btn">전체 메뉴 토글 버튼</span>
+        </header>
+        <!-- 서브헤더 영역 -->
+        <section class="sub_header_section">
+            <h2>문의사항</h2>
+            <ul class="breadcrum_list">
+                <li><a href="index.html">홈 /</a></li>
+                <li><a href="board.html">문의사항</a></li>
+            </ul>
+        </section>
+        <!-- 콘텐츠 영역 -->
+        <section class="content_section">
+            <!-- 게시판 -->
+            <div class="content_row_1">
+                <table class="board_table">
+                    <caption>문의사항 게시판</caption>
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>글쓴이</th>
+                            <th>조회수</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>5</td>
+                            <td><a href="">저는 누굴까요?</a></td>
+                            <td>FLAT DESIGN</td>
+                            <td>22</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><a href="">BLOG에서 다양한 정보를 만나보세요</a></td>
+                            <td>FLAT DESIGN</td>
+                            <td>32</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><a href="">FLAT DESIGN은 원색을 강조합니다.</a></td>
+                            <td>FLAT DESIGN</td>
+                            <td>67</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><a href="">홈페이지 리뉴얼 소식</a></td>
+                            <td>FLAT DESIGN</td>
+                            <td>96</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td><a href="">안녕하세요 홈페이지를 오픈했습니다.</a></td>
+                            <td>FLAT DESIGN</td>
+                            <td>123</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 검색, 글쓰기 -->
+            <div class="content_row_2">
+                <div class="search box">
+                    <form action="#" method="get">
+                        <input type="search" name="gallery_search_window" class="search_window" placeholder="검색어">
+                        <div class="search_select_box">
+                            <span>검색어</span>
+                            <ul class="search_select_list">
+                                <li>제목</li>
+                                <li>내용</li>
+                                <li>제목+내용</li>
+                                <li>댓글</li>
+                                <li>이름</li>
+                                <li>닉네임</li>
+                                <li>아이디</li>
+                                <li>태그</li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                <div class="write_box">
+                    <a href="#">글 쓰기</a>
+                </div>
+            </div>
+            <!-- 페이지 버튼 -->
+            <div class="content_row_3">
+                <span class="list_prev_btn">갤러리 이전 버튼</span>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <span class="list_next_btn">갤러리 다음 버튼</span>
+            </div>
+        </section>
+        <!-- 푸터 영역 -->
+        <footer class="footer">
+            <p>copyright&copy;2014.flat design blog all rights reserved.</p>
+        </footer>
     </div>
 </body>
 </html>
