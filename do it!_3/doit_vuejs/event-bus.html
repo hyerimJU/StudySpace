@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>event-bus</title>
+  </head>
+  <body>
+    <div id="app">
+      <child-component></child-component>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+
+    <script>
+      var eventBus = new Vue(); // 이벤트버스로 활용할 새 인스턴스 생성
+      // 하위 컴포넌트 정
+      Vue.component('child-component', {
+        template: '<div>하위 컴포넌트 영역입니다.<button v-on:click="showLog">show</button></div>',
+        methods: {
+          showLog: function(){
+            eventBus.$emit('triggerEventBus', 100);
+          }
+        }
+      });
+
+      var app = new Vue({
+        el: '#app',
+        // 상위 컴포넌트의 created 라이프 사이클 훅에 이벤트를 받는 로직 선언
+        created: function(){
+          eventBus.$on('triggerEventBus', function(value){
+            console.log("이벤트를 전달받음. 전달받은 값: ", value);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>event발생</title>
+  </head>
+  <body>
+    <div id=app>
+      <child-component v-on:show-log="printText"></child-component>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+
+    <script>
+      Vue.component('child-component', {
+        template: '<button v-on:click="showLog">show</button>', // 버튼 요소 추가
+        // 메서드 추가
+        methods: {
+          showLog: function(){
+            this.$emit('show-log'); // 이벤트 발생 로직
+          }
+        }
+      });
+
+      var app = new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue! passed from Parent Component'
+        },
+        // 최상위 컴포넌트 로직
+        methods: {
+          printText: function(){
+            console.log("received an event");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
